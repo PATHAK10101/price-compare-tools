@@ -143,15 +143,4 @@ Embed in markdown:
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
-
-## 👨‍💻 Author
-
-**Ayush Pathak**
-GitHub: [PATHAK10101](https://github.com/PATHAK10101)
-
 > Built with ❤️ using React, Express, and SerpAPI.
