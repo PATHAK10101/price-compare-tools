@@ -4,7 +4,6 @@
 [![Render](https://img.shields.io/badge/Backend-Render-007ACC?logo=render)](https://price-compare-tools.onrender.com)
 [![Node.js](https://img.shields.io/badge/Node.js-18.x-green?logo=node.js)](https://nodejs.org)
 [![React](https://img.shields.io/badge/React-18.x-blue?logo=react)](https://reactjs.org)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 ---
 
@@ -128,19 +127,8 @@ npm start
 Add screenshots here:
 
 ```
-project_root/
-└── screenshots/
-    ├── home.png
-    └── result.png
+Screenshot 2025-07-09 031036.png
 ```
 
-Embed in markdown:
-
-```
-![Home](./screenshots/home.png)
-![Result](./screenshots/result.png)
-```
-
----
 
 > Built with ❤️ using React, Express, and SerpAPI.
