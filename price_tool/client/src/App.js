@@ -68,7 +68,7 @@ function App() {
       </div>
 
       {!loading && results.length === 0 && (
-        <p style={{ color: "#f87171" }}>No results found.</p>
+        <p style={{ color: "#f87171" }}></p>
       )}
 
       {results.length > 0 && (
