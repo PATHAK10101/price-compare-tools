@@ -3,7 +3,13 @@ const cors = require("cors");
 const { getJson } = require("serpapi");
 
 const app = express();
-app.use(cors());
+const corsOptions = {
+  origin: "https://price-compare-tools.vercel.app",
+  methods: ["GET", "POST"],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Load environment variables manually
