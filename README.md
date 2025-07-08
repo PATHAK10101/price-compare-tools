@@ -10,35 +10,38 @@
 
 ## 🌐 Live Demo
 
-- 🔗 **Frontend (Vercel)**: [https://price-compare-tools.vercel.app](https://price-compare-tools.vercel.app)  
-- 🔗 **Backend (Render)**: [https://price-compare-tools.onrender.com](https://price-compare-tools.onrender.com)
+* **Frontend**: [https://price-compare-tools.vercel.app](https://price-compare-tools.vercel.app)
+* **Backend**: [https://price-compare-tools.onrender.com](https://price-compare-tools.onrender.com)
 
 ---
 
 ## 🧠 Features
 
-- 🔍 Search any product like *iPhone 16 Pro*, *Sony headphones*, etc.
-- 🌍 Select a country (US, IN, UK, CA, etc.) to get local prices
-- 📉 Automatically sorts results from lowest to highest price
-- 🔗 View product links directly to sellers
-- 💡 Easy to use UI, responsive design
-- 🔐 Uses SerpAPI securely via `.env`
+* 🔍 Search for any product like *iPhone 16 Pro*, etc.
+* 🌍 Select country to fetch regional prices
+* 📈 Compare price, currency, source, and view links
+* 🔐 Secured backend with SerpAPI and `.env`
 
 ---
 
 ## 🛠 Tech Stack
 
-| Frontend          | Backend             | Deployment      |
-|-------------------|---------------------|-----------------|
-| React + Axios     | Node.js + Express   | Vercel (Client) |
-| Tailwind (opt.)   | dotenv + SerpAPI    | Render (Server) |
+| Layer    | Tech             | Deployment |
+| -------- | ---------------- | ---------- |
+| Frontend | React, Axios     | Vercel     |
+| Backend  | Node.js, Express | Render     |
+| API      | SerpAPI          |            |
 
 ---
 
 ## 📁 Project Structure
+
+```
 price_tool/
-├── client/ # React frontend
-└── server/ # Node.js backend
+├── client/         # React frontend
+└── server/         # Node.js backend
+```
+
 ---
 
 ## ⚙️ Local Development
@@ -48,16 +51,107 @@ price_tool/
 ```bash
 git clone https://github.com/PATHAK10101/price-compare-tools.git
 cd price-compare-tools
+```
 
+### 2. Backend Setup
 
-2. Backend Setup (server/)
+```bash
 cd server
 npm install
-Create a .env file:
-SERP_API_KEY=your_serpapi_key_here
+```
+
+Create `.env` in `server/`:
+
+```
+SERP_API_KEY=your_serpapi_key
 PORT=5000
+```
 
 Start backend:
+
+```bash
 node index.js
+```
 
+### 3. Frontend Setup
 
+```bash
+cd ../client
+npm install
+```
+
+Create `.env` in `client/`:
+
+```
+REACT_APP_API_BASE=http://localhost:5000
+```
+
+Start frontend:
+
+```bash
+npm start
+```
+
+---
+
+## 🚀 Deployment
+
+### Backend on Render
+
+1. Create a new Web Service on Render
+2. Select `server/` as root
+3. Add environment variable: `SERP_API_KEY=your_key`
+4. Build command: `npm install`
+5. Start command: `node index.js`
+
+### Frontend on Vercel
+
+1. Import project in Vercel
+2. Set root as `client/`
+3. Add `REACT_APP_API_BASE=https://<your-render-backend>.onrender.com`
+4. Framework: React
+5. Click Deploy
+
+---
+
+## 🔒 Environment Variables
+
+| Variable             | Location    | Example                                                    |
+| -------------------- | ----------- | ---------------------------------------------------------- |
+| `SERP_API_KEY`       | server/.env | your\_serpapi\_key\_here                                   |
+| `REACT_APP_API_BASE` | client/.env | [http://localhost:5000](http://localhost:5000) (or Render) |
+
+---
+
+## 🖼 Screenshots (Optional)
+
+Add screenshots here:
+
+```
+project_root/
+└── screenshots/
+    ├── home.png
+    └── result.png
+```
+
+Embed in markdown:
+
+```
+![Home](./screenshots/home.png)
+![Result](./screenshots/result.png)
+```
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+**Ayush Pathak**
+GitHub: [PATHAK10101](https://github.com/PATHAK10101)
+
+> Built with ❤️ using React, Express, and SerpAPI.
