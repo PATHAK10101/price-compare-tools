@@ -15,6 +15,9 @@ const countries = [
   { code: "CN", name: "China" },
 ];
 
+// ✅ Use environment variable or fallback to localhost
+const API_BASE_URL = process.env.REACT_APP_API_BASE || "http://localhost:5000";
+
 function App() {
   const [query, setQuery] = useState("");
   const [country, setCountry] = useState("US");
@@ -26,7 +29,7 @@ function App() {
     setLoading(true);
     try {
       console.log("🔍 Sending request:", { query, country });
-      const res = await axios.post("http://localhost:5000/api/fetch-prices", {
+      const res = await axios.post(`${API_BASE_URL}/api/fetch-prices`, {
         query,
         country,
       });
@@ -34,6 +37,7 @@ function App() {
       setResults(res.data);
     } catch (err) {
       console.error("❌ Error fetching prices:", err);
+      alert("Failed to fetch prices. Please try again.");
     }
     setLoading(false);
   };
@@ -64,7 +68,7 @@ function App() {
       </div>
 
       {!loading && results.length === 0 && (
-        <p style={{ color: "#f87171" }}></p>
+        <p style={{ color: "#f87171" }}>No results found.</p>
       )}
 
       {results.length > 0 && (
